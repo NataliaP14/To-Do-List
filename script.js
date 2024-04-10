@@ -28,7 +28,7 @@ const addTask = () => {
     <span>${task}</span>
     </label>
     <button class ="edit-button">Edit</button>
-    <button class = "delete-button">Delete</button>
+    <button class = "delete-button">&times;</button>
     `;
 
     listContainer.appendChild(list);
@@ -40,13 +40,14 @@ const addTask = () => {
     const editTask = list.querySelector("span");
     const deleteButton = list.querySelector(".delete-button");
 
+    //checks if user clicked checkbox
     const checkBoxClick = () => {
-        list.classList.toggle("completed",checkbox.checked);
+        list.classList.toggle("completed", checkbox.checked);
         updateCounter();
     }
     checkbox.addEventListener("click", checkBoxClick);
 
-
+    //edit function 
     const editFunction = () => {
         const update = prompt("Edit task: ", editTask.textContent);
         if (update != null) {
@@ -57,5 +58,12 @@ const addTask = () => {
         }  
     }
     editButton.addEventListener("click", editFunction);
+
+
+    const deleteFunction = () => {
+        list.remove();
+        updateCounter();
+    }
+    deleteButton.addEventListener("click", deleteFunction);
 }
 
