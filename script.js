@@ -27,8 +27,9 @@ const addTask = () => {
     <input type = "checkbox">
     <span>${task}</span>
     </label>
-    <button class ="edit-button">Edit</button>
     <button class = "delete-button">&times;</button>
+    <button class ="edit-button">Edit</button>
+    
     `;
 
     listContainer.appendChild(list);
